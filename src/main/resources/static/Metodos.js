@@ -37,6 +37,10 @@ document.querySelector('#btnactualizo').addEventListener('click', function(){
 
  numeromayor = 0;
 
+ palo_banca = "";
+
+ palo_j1 = "";
+
  document.querySelector('#btnjugar').disabled = false;
 
 });
@@ -58,6 +62,10 @@ var conta2 = 0;
 var palo = "";
 
 var verifico = "";
+
+var palo_banca = "";
+
+var palo_j1 = "";
 
 
 async  function barajar(){
@@ -125,11 +133,18 @@ async  function barajar(){
 
             numero_banca = carta.numero
 
+            palo_banca = carta.palo
+
         }
         else{
-            if(carta.numero > numeromayor){
-                numeromayor = carta.numero;
-            }           
+            if(carta.palo == palo_banca){
+                if(carta.numero > numeromayor){
+                    numeromayor = carta.numero;
+    
+                    palo_j1 = carta.palo;
+                }
+            }
+           
         }
 
 
@@ -138,15 +153,14 @@ async  function barajar(){
 
     }
 
-    if(numero_banca < numeromayor){
-
+    if(numero_banca < numeromayor && palo_banca == palo_j1){
         verifico = "true"
     }
-    else if(numero_banca > numeromayor){
-        verifico = "false"
+    else if(numero_banca == numeromayor && palo_banca == palo_j1){
+        verifico = "empate"
     }
     else{
-        verifico = "empate"
+        verifico = "false"
     }
 
 
@@ -160,7 +174,9 @@ async  function barajar(){
     }
     else{
     document.getElementById("results").innerText = "Perdiste Pa!";
-    plata = plata - 100;
+    if(plata > 0){
+        plata = plata - 100;
+    }
     document.getElementById("plata").innerText = "Saldo: $" + plata;  
     }
 
