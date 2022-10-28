@@ -23,4 +23,19 @@ public class BarajaDaoImpl implements BarajaDao {
 		return ct;
 	}
 
+	
+    @Override
+    public String Login(String user, String pass) {
+        
+        if(user.equals("bjara") && pass.equals("1234")) {
+            
+            return "ok";
+        }
+        else {
+            return "error";
+        }
+        
+
+    }
+
 }
