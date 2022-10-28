@@ -1,60 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <link href="css/inicioCSS.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="herramientas/Estilos.css">
-    <style>
-        body {
-        height: 380px;
-        background-image: url("herramientas/fondo.jpg");
-        background-repeat:no-repeat;
-        background-color: #086B14;
-  background-position-x:center;
-  background-position-y:center;
-  background-size: 85rem;
-      }
-
-      p {
-        color: white;
-      }
-
-    </style>
-
-    <title>Bienvenido a este Juegazo!</title>
-
-    
+    <title>Eternity</title>
 </head>
 <body>
 
-    <script src="Metodos.js"></script>
-
-    <h1 align="center" id=plata>Saldo: $0</h1>
-    <p id="results" align="center"></p>
-    <h2>Banca: <span id="dealer-sum"></span></h2>
-    <div id="dealer-cards">
-        <img id="hidden1" src="./cards/BACK.png">
-    </div>
-
+    <div id="logo"> 
+        <h1><i> Eternity</i></h1>
+      </div> 
+      <section class="stark-login">
+        <div id="form">
+          <div id="fade-box">
+            <input type="text" name="txtuser" id="txtuser" placeholder="Usuario" required>
+              <input type="password" placeholder="Contraseña" id="txtpass" required>
+                
+                <button id="btningreso">Ingresar</button> 
+              </div>
+          </div>
+            <div class="hexagons">
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <br>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <br>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span> 
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  
+                  <br>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <span>&#x2B22;</span>
+                    <br>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                      <span>&#x2B22;</span>
+                    </div>      
+                  </section> 
+                  
+                  <div id="circle1">
+                    <div id="inner-cirlce1">
+                      <h2> </h2>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>    
     
-    <br>
-
-    <h2>Jugador 1: <span id="your-sum"></span></h2>
-    <div id="contenedor">
-        <div id="your-cards"></div>
-    </div>
-
-    <br>
-    <button id="btnjugar">Jugar</button>
-    <button id="btnactualizo">Otra partida</button>
- 
-
-
-
-    
-    <script src="Metodos.js"></script>
-
+      <script src="js/login.js"></script>
     
 </body>
 </html>

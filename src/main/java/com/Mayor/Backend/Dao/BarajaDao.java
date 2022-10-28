@@ -9,4 +9,6 @@ public interface BarajaDao {
 	
 	List<Carta> juego();
 	
+	String Login(String user, String pass);
+	
 }

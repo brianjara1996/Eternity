@@ -1,6 +1,31 @@
 document.querySelector('#btnjugar').addEventListener('click', function(){
+    const saldo = sessionStorage.getItem("plata");
+    
+    if(saldo == 0){
+        alert("Se necesita Cargar dinero para empezar el juego rey!")
+    }
+    else{
     barajar();
     this.disabled = true;
+    }
+});
+
+window.addEventListener('load', function() {
+
+    const dinero = sessionStorage.getItem("plata");
+
+    if(dinero == null || !(dinero => 0)){
+        sessionStorage.setItem("plata", 0);       
+    }
+    
+    saldo();
+});
+
+
+document.querySelector('#cargarsaldo').addEventListener('click', function(){
+
+    window.location.href = "cargasaldo.html";
+
 });
 
 
@@ -163,21 +188,58 @@ async  function barajar(){
         verifico = "false"
     }
 
-
+    plata = sessionStorage.getItem("plata");
+    let total_partida  = parseInt(plata);
+    
     if(verifico == "true"){
     document.getElementById("results").innerText = "Ganaste Rey!";
-    plata = plata + 100;
-    document.getElementById("plata").innerText = "Saldo: $" + plata;    
+    total_partida = total_partida + 100;
+    document.getElementById("varPlata").innerText =  total_partida;   
+    sessionStorage.setItem("plata", total_partida);  
     }
     else if(verifico == "empate"){
     document.getElementById("results").innerText = "Empate Papu";
     }
     else{
     document.getElementById("results").innerText = "Perdiste Pa!";
-    if(plata > 0){
-        plata = plata - 100;
+    if(total_partida > 0){
+        total_partida = total_partida - 100;
     }
-    document.getElementById("plata").innerText = "Saldo: $" + plata;  
+    document.getElementById("varPlata").innerText =  total_partida;  
+    sessionStorage.setItem("plata", total_partida);  
     }
 
 } 
+
+
+async function saldo(){
+
+    const total =  sessionStorage.getItem("plata");
+
+    const request = await fetch('mp/saldo',{
+        method:'GET',
+        header: {
+        'accept' : 'application/json',
+        'Content-Type' : 'application/json',
+        'Authorization':  localStorage.token
+        }
+        });
+        const saldo = await request.json();
+
+
+        if(saldo.json != null){
+
+             let kaka  = parseInt(saldo.json);
+            
+            document.getElementById("varPlata").innerText = kaka;
+
+            sessionStorage.setItem("plata", kaka);
+        }
+        else{
+            sessionStorage.setItem("plata", total);
+
+            document.getElementById("varPlata").innerText = total;
+        }
+
+
+}
