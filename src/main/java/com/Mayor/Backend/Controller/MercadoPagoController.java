@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Produces;
 
 import org.apache.maven.model.Model;
-import org.json.JSONObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
