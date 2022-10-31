@@ -2,10 +2,7 @@ package com.Mayor.Backend.Dao;
 
 import java.math.BigDecimal;
 import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
+
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -103,7 +100,7 @@ PreferenceBackUrlsRequest backUrls =
 
     @Override
     public Boolean insertoPago(String id_pago , String user) {
-        
+        /*
         
          Boolean bandera = false;
         
@@ -178,6 +175,9 @@ PreferenceBackUrlsRequest backUrls =
      }
     return bandera;
     
+    */
+    
+    return null;
 
     }
 
